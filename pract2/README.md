@@ -5,8 +5,8 @@ Luis Foncillas Gutiérrez -- arquitecturas de servicios de red 2023
 ## SOLUCIÓN 1
 ### VMs y firewall básico
 Se monta una máquina de salto y un servidor web, instalando un firewall de capa 4 básico
-![vmssol1](pract2/vmssol1.png)
-![firewallsol1](pract2/firwallsol1.png)
+![vmssol1](/pract2/vmssol1.png)
+![firewallsol1](/pract2/firewallsol1.png)
 
 ### Conexiones
 tras esto se comprueban conexiones: primero de local a servidor salto, y después de salto a servidor web
@@ -53,7 +53,7 @@ Tras instalar todas estas cosas se comprueba la conexión al balanceador de carg
 Se requiere instalar una solución zero trust, es decir cambiar todo a HTTPS, y el puerto al 443, y modificar los parámetros de nginx para se acceda por el puerto 443, y que utilice los certificados generados anteriormente.
 Esto se consigue transferiendo los certificados al servidor web.
 
-![loadbalancersol3](/pract2/loadbalancersol3)
+![loadbalancersol3](/pract2/loadbalancersol3.png)
 
 Si accedemos por el puerto 80 no permite tráfico
 
