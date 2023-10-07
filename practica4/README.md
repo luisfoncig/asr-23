@@ -263,8 +263,14 @@ resource "google_compute_firewall" "rules-2" {
 }
 ```
 ## Resultados terraform
+### Terraform plan y terraform apply
+A continuación se mostrarán los resultados de los comandos por consola de terraform plan y apply, y los ficheros de estado que se guardan en local.
 ![Alt text](img/terraformoplan.png)
 ![Alt text](img/terraformapply.png)
 ![Alt text](img/trrformapply2.png)
 ![Alt text](img/terraformres.png)
+
+### Resultado final terraform
+Tras esto, si se accede al gui de gcloud podemos ver que se han creado tanto la VM como las firewall rules descritas en el fichero de configuración.
+
 
