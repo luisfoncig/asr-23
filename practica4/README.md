@@ -277,3 +277,19 @@ Tras esto, si se accede al gui de gcloud podemos ver que se han creado tanto la 
 ![Alt text](img/firewallrulesterraform.png)
 ![Alt text](img/vmterraform.png)
 
+## Variables terraform
+Las variables en terraform se utilizan para parametrizar y personalizar la configuración de infraestructura. Se pueden definir variables dentro de la configuración de Terraform y luego utilizarlas en otros recursos y módulos. Esto facilita la reutilización de código y la adaptación de la configuración a diferentes contextos o entornos. 
+
+### Archivo de variables
+Se puede crear un archivo de variables terrafor .tfvars, el cual puede ser invocado con el comando terraform usando extensión de comando:
+```bash
+terraform plan -var-file="variables.tfvars"
+```
+esto aplicaría a mi main.tf las variables encontradas en el .tfvars. Este tipo de método ofrece flexibilidad para ajustar los diferentes parámetros dependiendo del contexto.
+
+### Variable de entorno fija
+Si se quisiera usar una variable de entorno, por ejemplo para el nombre de proyecto con el fichero .tf ya creado, basta con configurar la variable, y recurrir a ella antes de usar terraform plan o apply:
+```bash
+export TF_VAR_project_name="proyecto_alternativo"
+terraform plan
+```
