@@ -274,4 +274,6 @@ A continuación se mostrarán los resultados de los comandos por consola de terr
 ### Resultado final terraform
 Tras esto, si se accede al gui de gcloud podemos ver que se han creado tanto la VM como las firewall rules descritas en el fichero de configuración.
 
+![Alt text](img/firewallrulesterraform.png)
+![Alt text](img/vmterraform.png)
 
