@@ -5,10 +5,21 @@ En la siguiente práctica se utilizarán tanto ansible como terraform para hacer
 ## Service Account
 Para comenzar es necesario crear una service account, necesaria por temas de autenticación, y cederle ciertos permisos para que pueda interactuar con nuestro proyecto.
 
+![Alt text](img/servacc.png)
+![Alt text](img/saccroles.png)
+
 Tras esto, es necesario asociar una clave ssh a la service account. Observando la configuración del proyecto por consola se puede observar que la service account tiene acceso. Para terminar se determinan la región y zona por defecto a través de la consola de gcloud.
+
+![Alt text](img/gcloudconflist.png)
+![Alt text](img/gcloudcompute.png)
+![Alt text](img/resultadosgcloudcompute.png)
 
 ## Ansible Playbook
 En este apartado es necesario tener una estructura interna de archivos para tener un correcto funcionamiento
+
+![Alt text](img/structansible1.png)
+![Alt text](img/ansiblestruct2.png)
+![Alt text](img/ansiblestruct3.png)
 
 El playbook que se muestr a continuación es el código equivalente para montar la vm, e instalarla, configurando sus firewalls y demás parámetros
 main.yaml: 
@@ -148,9 +159,16 @@ Como paso final, se ejectuta el playbook mediante el comando
 ```bash
 ansible-playbook main.yml -u sa_<UID de la SA>
 ```
+![Alt text](img/ansibleplaybook.png)
+
+y se comprueba que la vm ha sido creada, con sus consecuentes firewall rules:
+
+![Alt text](img/vm.png)
+![Alt text](img/firewallrulesansible.png)
+
 y finalmente se accede a la ip asignada (se observa en gcloud accediendo a nuestra vm).
 
-
+![Alt text](img/resultadofinal.png)
 
 # Terraform
 En este apartado se procederá a crear un fichero de configuración terraform, donde crearemos la máquina virtual, aplicando la misma mediante la línea de comandos.
@@ -245,5 +263,8 @@ resource "google_compute_firewall" "rules-2" {
 }
 ```
 ## Resultados terraform
-
+![Alt text](img/terraformoplan.png)
+![Alt text](img/terraformapply.png)
+![Alt text](img/trrformapply2.png)
+![Alt text](img/terraformres.png)
 
